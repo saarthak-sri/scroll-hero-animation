@@ -12,6 +12,7 @@ const METRICS_BOTTOM = [
   { value: "23%", label: "Decreased in customer phone calls", tone: "bg-[#63b4e0] text-[#0a0a0f]" },
   { value: "40%", label: "Decreased in customer phone calls", tone: "bg-[#b56a2d] text-[#0a0a0f]" }
 ];
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/scroll-hero-animation" : "";
 
 export default function Home() {
   const sceneRef = useRef(null);
@@ -159,7 +160,7 @@ export default function Home() {
             <div ref={carWrapRef} className="absolute left-0 top-1/2 z-10 -translate-y-1/2">
               <img
                 ref={carRef}
-                src="/car-top.svg"
+                src={`${BASE_PATH}/car-top.svg`}
                 alt="Top view orange sports car"
                 className="w-[clamp(380px,50vw,760px)] will-change-transform"
               />
